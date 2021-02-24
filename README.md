@@ -2,9 +2,9 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to original source files. Directly copied from MediaWiki core. 
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with bare minimum modifications.
 
-Licensed under the _Lesser_ General Public License. Can be used from any repository regardless of license. (Note that the same is not true for MW code copied directly from mediawiki core).
+Licensed under the _Lesser_ General Public License. Can be used from any repository regardless of license. (Note that on the other hand, MW source code copied directly may only be pasted into repos with GPL-compatible licenses).
 
 ## How to use 
 
@@ -15,7 +15,7 @@ If you're using Jest's default test environment `jest-environment-jsdom`, just t
     "setupFilesAfterEnv": ["mock-mediawiki"] 
 ```
 
-Done! All your Jest test will now have access to `mw` and `$` as globals. This setup works with both CommonJS module format and ESM. 
+Done! All your Jest tests will now have access to `mw` and `$` as globals. This setup works with both CommonJS module format and ESM.
 
 Jest exposes globally most browser-only globals available via jsdom. So if your gadget code includes references to `HTMLSpanElement` or `XMLDocument` et al, they'll just work!
 
@@ -36,7 +36,7 @@ It is assumed that ESM tests undergo transformation to CommonJS as part of some 
 
 ----
 
-If your tests are in TypeScript, you should additionally install `types-mediawiki` for the type definitions. However, note that types-mediawiki covers more modules, so TypeScript-based IntelliSense can be misleading.
+If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense can be misleading.
 
 ### TODO
 
