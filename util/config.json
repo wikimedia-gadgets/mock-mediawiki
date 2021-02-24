@@ -1,0 +1,5 @@
+{
+  "FragmentMode": ["html5"],
+  "LoadScript": "load",
+  "GenerateThumbnailOnParse": false
+}

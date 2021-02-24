@@ -1,0 +1,14 @@
+{
+  "name": "mock-mediawiki",
+  "version": "1.0.0",
+  "description": "MediaWiki JS interface mocking in Node.js",
+  "main": "index.js",
+  "keywords": [
+    "mediawiki"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
