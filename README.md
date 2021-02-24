@@ -1,10 +1,14 @@
 ## mock-mediawiki
+![Node.js CI](https://github.com/wikimedia-gadgets/mock-mediawiki/workflows/test/badge.svg)
+[![NPM version](https://img.shields.io/npm/v/mock-mediawiki.svg)](https://www.npmjs.com/package/mock-mediawiki)
 
 Honest MediaWiki JS interface mocking in Node.js.
 
 No unnecessary changes to the original source files. Directly copied from MediaWiki core with bare minimum modifications.
 
 Licensed under the _Lesser_ General Public License. Can be used from any repository regardless of license. (Note that on the other hand, MW source code copied directly may only be pasted into repos with GPL-compatible licenses).
+
+[![Download stats](https://nodei.co/npm/mock-mediawiki.png?downloads=true&downloadRank=true)](https://nodei.co/npm/mock-mediawiki/)
 
 ## How to use 
 
@@ -36,11 +40,13 @@ It is assumed that ESM tests undergo transformation to CommonJS as part of some 
 
 ----
 
-If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense can be misleading.
+If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense could be somewhat misleading.
 
-### TODO
+Please file an issue if anything doesn't work.
 
-[ PRs Welcome ]
+### To-do
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 - [ ] Add mw.Uri
 - [ ] Add mw.language maybe?
