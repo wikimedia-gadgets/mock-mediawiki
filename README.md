@@ -4,7 +4,9 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with bare minimum modifications.
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, and mw.Title. jQuery is also included from the npm package.
+
+To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 
 Licensed under the _Lesser_ General Public License. Can be used from any repository regardless of license. (Note that on the other hand, MW source code copied directly may only be pasted into repos with GPL-compatible licenses).
 
