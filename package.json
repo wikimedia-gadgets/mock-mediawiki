@@ -1,14 +1,18 @@
 {
-  "name": "mock-mediawiki",
-  "version": "1.0.0",
-  "description": "MediaWiki JS interface mocking in Node.js",
-  "main": "index.js",
-  "keywords": [
-    "mediawiki"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "jquery": "^3.5.1"
-  }
+	"name": "mock-mediawiki",
+	"version": "1.0.0",
+	"description": "MediaWiki JS interface mocking in Node.js",
+	"main": "index.js",
+	"keywords": [
+		"mediawiki",
+		"testing"
+	],
+	"license": "LGPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/wikimedia-gadgets/mock-mediawiki/issues"
+	},
+	"homepage": "https://github.com/wikimedia-gadgets/mock-mediawiki#readme",
+	"dependencies": {
+		"jquery": "^3.5.1"
+	}
 }
