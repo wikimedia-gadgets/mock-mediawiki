@@ -7,7 +7,7 @@ global.$VARS = {
 require("./lib/mediawiki");
 global.mw = global.mediaWiki = window.mw;
 
-require("./config_data");
+require("./mw-config-data");
 require("./lib/util/util");
 require("./lib/Title/Title");
 

@@ -15,6 +15,8 @@ mw.config.set({
     wgScript: '/index.php',
     wgArticlePath: '/index.php/$1',
     wgScriptPath: '',
+    wgLegalTitleChars: " %!\"$&'()*,\\-./0-9:;=?@A-Z\\\\\\^_`a-z~+\\u0080-\\uFFFF",
+    wgIllegalFileChars: ":/\\\\",
     wgFormattedNamespaces: {
         '-2': 'Media',
         '-1': 'Special',
