@@ -8,6 +8,7 @@ describe('test', function () {
 	});
 
 	test('Other stuff', () => {
+		expect(mw.config.get('wgPageName')).toEqual('TestPage');
 		expect($.extend).toBeInstanceOf(Function);
 		expect(mw.config).toBeInstanceOf(mw.Map);
 		expect(mw.util.escapeRegExp("a?:$")).toBe("a\\?:\\$");

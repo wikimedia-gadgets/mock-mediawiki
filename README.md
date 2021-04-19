@@ -4,7 +4,7 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, and mw.Title. jQuery is also included from the npm package.
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.util, mw.Title, and base modules such as mw.config, mw.hook, mw.html, and mw.Message. jQuery is also included from [its npm package](npmjs.com/package/jquery).
 
 To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 

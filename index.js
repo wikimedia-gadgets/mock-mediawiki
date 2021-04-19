@@ -1,15 +1,16 @@
 global.$ = global.jQuery = require("jquery");
 
+// needed in ./lib/mediawiki
 global.$VARS = {
-	// needed in ./mediawiki
 	wgLegacyJavaScriptGlobals: false,
 };
 require("./lib/mediawiki");
 global.mw = global.mediaWiki = window.mw;
-
-require("./mw-config-data");
+require("./lib/mediawiki.base");
 require("./lib/util/util");
 require("./lib/Title/Title");
+
+require("./stubs/mw.loader");
 
 module.exports = {
 	setPage: function (pageName, pageId, pageIsRedirect, pageRestrictions) {
