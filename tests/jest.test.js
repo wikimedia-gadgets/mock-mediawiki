@@ -14,4 +14,34 @@ describe('test', function () {
 		expect(mw.util.escapeRegExp("a?:$")).toBe("a\\?:\\$");
 	});
 
+	test('api', async () => {
+		let api = new mw.Api({
+			ajax: {
+				url: 'https://test.wikipedia.org/w/api.php'
+			}
+		});
+		let apiResult = await api.get({ action: 'query' });
+		expect(apiResult).toStrictEqual({ batchcomplete: '' });
+	});
+
+	test('api with login', async () => {
+		if (process.env.WMF_USERNAME && process.env.WMF_PASSWORD) {
+			let api = new mw.Api({
+				ajax: {
+					url: 'https://test.wikipedia.org/w/api.php'
+				}
+			});
+			await api.login(process.env.WMF_USERNAME, process.env.WMF_PASSWORD);
+			const token = await api.getEditToken();
+			expect(token).toMatch(/\w{10}\+\\$/);
+		} else {
+			console.error('No environment variables passed for authentication!'); // soft pass
+		}
+	}, 10000);
+
+	test('user', async () => {
+		let rights = await mw.user.getRights();
+		expect(rights.length).toEqual(0);
+	});
+
 });

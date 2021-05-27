@@ -1,6 +1,8 @@
 
 Last updated from commit [bdd211fb801ee056a3c89e2291cb26ca2961f701](https://github.com/wikimedia/mediawiki/tree/bdd211fb801ee056a3c89e2291cb26ca2961f701) on [wikimedia/mediawiki](https://github.com/wikimedia/mediawiki).
 
+mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086.
+
 | File         | Original file | Patches  | 
 |--------------|---------------|----------|
 | mediawiki.js |  [resources/src/startup/mediawiki.js] | None |
@@ -12,6 +14,8 @@ Last updated from commit [bdd211fb801ee056a3c89e2291cb26ca2961f701](https://gith
 | Title/Title.js| [resources/src/mediawiki.Title/Title.js] | Changed import `require( 'mediawiki.String' )` to `require( '../String' )` |
 | Title/phpCharToUpper.json | [resources/src/mediawiki.Title/phpCharToUpper.json] | None |
 | String.js | [resources/src/mediawiki.String.js]  | None |
+| user.js | [resources/src/mediawiki.user.js] | None
+| All 12 mw.Api files | [resources/src/mediawiki.api] | None 
 
 Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these are generated on-the-fly based on wiki configurations by the backend PHP, so there's nowhere we can copy the files from.)
 
@@ -24,3 +28,5 @@ Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these a
 [resources/src/mediawiki.Title/Title.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.Title/Title.js
 [resources/src/mediawiki.Title/phpCharToUpper.json]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.Title/phpCharToUpper.json
 [resources/src/mediawiki.String.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.String.js
+[resources/src/mediawiki.user.js]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.user.js
+[resources/src/mediawiki.api]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.api

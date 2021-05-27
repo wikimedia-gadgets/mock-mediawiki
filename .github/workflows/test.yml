@@ -12,3 +12,6 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
+        env:
+          WMF_USERNAME: {{secrets.WMF_USERNAME}}
+          WMF_PASSWORD: {{secrets.WMF_PASSWORD}}

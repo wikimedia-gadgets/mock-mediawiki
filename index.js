@@ -9,6 +9,18 @@ global.mw = global.mediaWiki = window.mw;
 require("./lib/mediawiki.base");
 require("./lib/util/util");
 require("./lib/Title/Title");
+require("./lib/user");
+require("./lib/api/index");
+require("./lib/api/login");
+require("./lib/api/messages");
+require("./lib/api/edit");
+require("./lib/api/category");
+require("./lib/api/parse");
+require("./lib/api/options");
+require("./lib/api/rollback");
+require("./lib/api/upload");
+require("./lib/api/user");
+require("./lib/api/watch");
 
 require("./stubs/mw.loader");
 

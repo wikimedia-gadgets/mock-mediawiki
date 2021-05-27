@@ -4,7 +4,7 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.util, mw.Title, and base modules such as mw.config, mw.hook, mw.html, and mw.Message. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.util, mw.Title, mw.Api, mw.user and base modules such as mw.config, mw.hook, mw.html, and mw.Message. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
 
 To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 
@@ -12,7 +12,7 @@ Licensed under the _Lesser_ General Public License. Can be used from any reposit
 
 [![Download stats](https://nodei.co/npm/mock-mediawiki.png?downloads=true&downloadRank=true)](https://nodei.co/npm/mock-mediawiki/)
 
-## How to use 
+## How to use
 
 ### Use with Jest
 
@@ -25,9 +25,11 @@ Done! All your Jest tests will now have access to `mw` and `$` as globals. This 
 
 Jest exposes globally most browser-only globals available via jsdom. So if your gadget code includes references to `HTMLSpanElement` or `XMLDocument` et al, they'll just work!
 
+Use of mw.Api for making API calls from JSDOM has only been verified working with Jest. For this, ensure that you set a `testURL` property in `jest.config.js` that is on the same domain as the API endpoint URL which can be set as `api = new mw.Api({ ajax: { url: '<APIURL>' } })`.
+
 ### Use with other test runners
 
-Other test runners don't usually have jsdom integrated. You need to install jsdom separately (`npm i -D jsdom`) and then include the following in your test files:
+Other test runners don't usually have JSDOM integrated. You need to install jsdom separately (`npm i -D jsdom`) and then include the following in your test files:
 
 CommonJS:
 ```js
@@ -51,4 +53,6 @@ Please file an issue if anything doesn't work.
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 - [ ] Add mw.Uri
-- [ ] Add mw.language maybe?
+- [ ] Add mw.language 
+- [ ] Add mediawiki.JQueryMsg, mw.cldr, mw.libs.pluralRuleParser 
+- [ ] Add mw.cookie, mw.storage
