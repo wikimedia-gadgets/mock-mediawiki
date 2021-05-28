@@ -5,7 +5,7 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.hook, mw.html, mw.Uri, mw.storage, mw.language, mw.template, mw.Message and mw.jqueryMsg. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.loader, mw.hook, mw.html, mw.Uri, mw.storage, mw.language, mw.template, mw.Message and mw.jqueryMsg. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
 
 To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 
@@ -48,11 +48,13 @@ It is assumed that ESM tests undergo transformation to CommonJS as part of some 
 
 If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense could be somewhat misleading.
 
-For using mw.storage, you must give JSDOM a URL (for Jest this is done via `testURL` in jest.config.js, for jsdom or jsdom-global, provide `url` param to the constructor).
+For using `mw.storage`, you must give JSDOM a URL (for Jest this is done via `testURL` in jest.config.js, for jsdom or jsdom-global, provide `url` param to the constructor). `mock-mediawiki/with-jsdom` sets this to `https://test.wikipedia.org`. If you need it to be something different, consider using jsdom-global or jest instead.
 
-For using mw.Api to make API calls from JSDOM, ensure that you give JSDOM a URL that is on the same domain as the API URL mw.Api gets either explicitly set via its constructor (`api = new mw.Api({ ajax: { url: '<APIURL>' } })`) or implicitly set through `mw.config.get('wgScriptPath')`. 
+For using `mw.Api` to make API calls from JSDOM, ensure that your JSDOM URL (see above) is on the same domain as the API URL mw.Api gets either explicitly set via its constructor (`api = new mw.Api({ ajax: { url: '<APIURL>' } })`) or implicitly set through `mw.config.get('wgScriptPath')`. Otherwise, you'd get a CORS error. This can also be worked around by using `origin: '*'` in API calls.
 
-For mw.language, [convertGrammar specialisations](https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language/languages) for non-English languages aren't included (since whether to load them or not depends on the wgUserLanguage). 
+It is possible to use `mw.loader` for loading and executing scripts with `runScripts: 'dangerously'` in the JSDOM config (this is on by default in Jest). Do not execute anything from untrusted sources – read more [here](https://github.com/jsdom/jsdom#executing-scripts).
+
+For `mw.language`, [convertGrammar specialisations](https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language/languages) for non-English languages aren't included (since whether to load them or not depends on the wgUserLanguage). 
 
 Please file an issue if anything doesn't work.
 
