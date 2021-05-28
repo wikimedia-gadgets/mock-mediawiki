@@ -34,6 +34,7 @@ require("./lib/mediawiki.language/mediawiki.language.months");
 require("./lib/mediawiki.language/mediawiki.language.names");
 require("./lib/mediawiki.language/mediawiki.language.numbers");
 require("./lib/mediawiki.language/mediawiki.language.specialCharacters");
+require("./lib/mediawiki.jqueryMsg/mediawiki.jqueryMsg");
 
 require("./stubs/mw.loader");
 

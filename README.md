@@ -4,7 +4,7 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.hook, mw.html, mw.Uri, mw.storage, mw.language, mw.template, and mw.Message. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.hook, mw.html, mw.Uri, mw.storage, mw.language, mw.template, mw.Message and mw.jqueryMsg. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
 
 To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 
@@ -59,6 +59,4 @@ Please file an issue if anything doesn't work.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-- [ ] Add mediawiki.JQueryMsg
 - [ ] Add mw.cookie
-- [ ] Add mw.template

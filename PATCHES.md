@@ -24,6 +24,7 @@ mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086. mw.Ur
 | All 8 mw.language files | [resources/src/mediawiki.language] | None
 | mediawiki.cldr/index.js | [resources/src/mediawiki.cldr/index.js] | Changed `require( 'mediawiki.libs.pluralruleparser' )` to `mw.libs.pluralRuleParser`
 | CLDRPluralRuleParser/CLDRPluralRuleParser.js | [resources/lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js] | None
+| mediawiki.jqueryMsg/mediawiki.jqueryMsg.js | [resources/src/mediawiki.jqueryMsg/mediawiki.jqueryMsg.js] | None
 
 Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these are generated on-the-fly based on wiki configurations by the backend PHP, so there's nowhere we can copy the files from.)
 
@@ -44,3 +45,4 @@ Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these a
 [resources/src/mediawiki.language]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language
 [resources/src/mediawiki.cldr/index.js]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.cldr/index.js
 [resources/lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js]: https://github.com/wikimedia/mediawiki/tree/master/resources/lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js
+[resources/src/mediawiki.jqueryMsg/mediawiki.jqueryMsg.js]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.jqueryMsg/mediawiki.jqueryMsg.js
