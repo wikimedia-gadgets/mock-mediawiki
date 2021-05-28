@@ -4,9 +4,9 @@ global.$ = global.jQuery = require("jquery");
 global.$VARS = {
 	wgLegacyJavaScriptGlobals: false,
 };
-require("./lib/mediawiki");
+require("./lib/startup/mediawiki");
 global.mw = global.mediaWiki = window.mw;
-require("./lib/mediawiki.base");
+require("./lib/mediawiki.base/mediawiki.base");
 require("./lib/mediawiki.util/util");
 require("./lib/mediawiki.Title/Title");
 require("./lib/mediawiki.Uri/Uri");
