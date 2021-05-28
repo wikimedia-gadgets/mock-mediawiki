@@ -63,6 +63,26 @@ describe('test', function () {
 		mw.loader.addStyleTag('body { font-size: 10px; }');
 	});
 
+	it('api with login', async () => {
+		if (process.env.WMF_USERNAME && process.env.WMF_PASSWORD) {
+			let api = new mw.Api({
+				ajax: {
+					url: 'https://test.wikipedia.org/w/api.php'
+				}
+			});
+			await api.login(process.env.WMF_USERNAME, process.env.WMF_PASSWORD);
+			const token = await api.getEditToken();
+			assert.match(token,/\w{10}\+\\$/);
+		} else {
+			console.error('No environment variables passed for authentication!'); // soft pass
+		}
+	}, 10000);
+
+	it('user', async () => {
+		let rights = await mw.user.getRights();
+		assert.strictEqual(rights.length,0);
+	});
+
 });
 
 function sleep(ms) {

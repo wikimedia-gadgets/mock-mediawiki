@@ -25,8 +25,6 @@ Done! All your Jest tests will now have access to `mw` and `$` as globals. This 
 
 Jest exposes globally most browser-only globals available via jsdom. So if your gadget code includes references to `HTMLSpanElement` or `XMLDocument` et al, they'll just work!
 
-Use of mw.Api for making API calls from JSDOM has only been verified working with Jest. For this, ensure that you set a `testURL` property in `jest.config.js` that is on the same domain as the API endpoint URL which can be set as `api = new mw.Api({ ajax: { url: '<APIURL>' } })`.
-
 ### Use with other test runners
 
 Other test runners don't usually have JSDOM integrated. You need to install jsdom separately (`npm i -D jsdom`) and then include the following in your test files:
@@ -49,7 +47,9 @@ It is assumed that ESM tests undergo transformation to CommonJS as part of some 
 
 If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense could be somewhat misleading.
 
-For using mw.storage, you must give JSDOM a URL (for jest this is done via `testURL` in jest.config.js, for jsdom or jsdom-global, provide `url` param to the constructor). 
+For using mw.storage, you must give JSDOM a URL (for Jest this is done via `testURL` in jest.config.js, for jsdom or jsdom-global, provide `url` param to the constructor).
+
+For using mw.Api to make API calls from JSDOM, ensure that you give JSDOM a URL that is on the same domain as the API URL mw.Api gets either explicitly set via its constructor (`api = new mw.Api({ ajax: { url: '<APIURL>' } })`) or implicitly set through `mw.config.get('wgScriptPath')`. 
 
 For mw.language, [convertGrammar specialisations](https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language/languages) for non-English languages aren't included (since whether to load them or not depends on the wgUserLanguage). 
 
