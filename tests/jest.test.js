@@ -40,6 +40,11 @@ describe('test', function () {
 		expect(mw.storage.session.get('xx')).toBe('test-xx-value')
 	});
 
+	test('template', () => {
+		let output = mw.template.compile('<div>Text</div>', 'html');
+		expect(output.render()[0]).toBeInstanceOf(HTMLDivElement);
+	});
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {

@@ -23,6 +23,7 @@ require("./lib/api/upload");
 require("./lib/api/user");
 require("./lib/api/watch");
 require("./lib/storage");
+require("./lib/template");
 
 require("./stubs/mw.loader");
 

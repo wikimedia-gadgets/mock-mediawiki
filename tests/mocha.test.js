@@ -42,4 +42,10 @@ describe('test', function () {
 		assert.strictEqual(mw.storage.session.get('xx'), 'test-xx-value');
 	});
 
+	it('template', () => {
+		let output = mw.template.compile('<div>Text</div>', 'html');
+		assert.ok(output.render()[0] instanceof window.HTMLDivElement);
+	});
+
+
 });
