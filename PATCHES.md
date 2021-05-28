@@ -26,7 +26,9 @@ mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086. mw.Ur
 | CLDRPluralRuleParser/CLDRPluralRuleParser.js | [resources/lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js] | None
 | mediawiki.jqueryMsg/mediawiki.jqueryMsg.js | [resources/src/mediawiki.jqueryMsg/mediawiki.jqueryMsg.js] | None
 
-Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these are generated on-the-fly based on wiki configurations by the backend PHP, so there's nowhere we can copy the files from.)
+Extra files added: 
+- By supplying suitable values of our own: `mediawiki.base/config.json`, `mediawiki.util/config.json` (In real MediaWiki, these are generated on-the-fly based on wiki configurations by the backend PHP, so there's nowhere we can copy the files from.)
+- By copying from mw.loader.moduleRegistry['<MODULE_NAME>'].packageExports['<FILE_NAME>']: `mediawiki.jqueryMsg/parserDefaults.json`, `mediawiki.language/names.json`, `mediawiki.Uri/loose.regexp.js`, `mediawiki.Uri/strict.regexp.js`.
 
 [resources/src/startup/mediawiki.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/startup/mediawiki.js
 [resources/src/mediawiki.base/mediawiki.base.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.base/mediawiki.base.js
