@@ -1,0 +1,7 @@
+{
+	"prefix": "testwiki",
+	"domain": "",
+	"path": "/",
+	"expires": 2592000,
+	"sameSiteLegacy": true
+}

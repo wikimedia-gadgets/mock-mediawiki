@@ -63,6 +63,11 @@ describe('test', function () {
 		mw.loader.addStyleTag('body { font-size: 10px; }');
 	});
 
+	it('cookie', () => {
+		mw.cookie.set('key', 'value');
+		assert.strictEqual(mw.cookie.get('key'),'value');
+	});
+
 	it('api with login', async () => {
 		if (process.env.WMF_USERNAME && process.env.WMF_PASSWORD) {
 			let api = new mw.Api({

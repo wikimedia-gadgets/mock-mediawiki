@@ -60,6 +60,11 @@ describe('test', function () {
 		mw.loader.addStyleTag('body { font-size: 10px; }');
 	}, 10000);
 
+	test('cookie', () => {
+		mw.cookie.set('key', 'value');
+		expect(mw.cookie.get('key')).toBe('value');
+	});
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {

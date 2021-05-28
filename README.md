@@ -1,6 +1,7 @@
 ## mock-mediawiki
 ![Node.js CI](https://github.com/wikimedia-gadgets/mock-mediawiki/workflows/test/badge.svg)
 [![NPM version](https://img.shields.io/npm/v/mock-mediawiki.svg)](https://www.npmjs.com/package/mock-mediawiki)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Honest MediaWiki JS interface mocking in Node.js.
 
@@ -55,8 +56,3 @@ For mw.language, [convertGrammar specialisations](https://github.com/wikimedia/m
 
 Please file an issue if anything doesn't work.
 
-### To-do
-
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-- [ ] Add mw.cookie
