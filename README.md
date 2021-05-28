@@ -59,7 +59,6 @@ Please file an issue if anything doesn't work.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-- [ ] Add mw.language 
 - [ ] Add mediawiki.JQueryMsg, mw.cldr, mw.libs.pluralRuleParser 
 - [ ] Add mw.cookie
 - [ ] Add mw.template
