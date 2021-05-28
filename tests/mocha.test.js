@@ -16,4 +16,23 @@ describe('test', function () {
 		assert(mw.util.escapeRegExp("a?:$") === "a\\?:\\$");
 	});
 
+	it('Uri', () => {
+		const uri = new mw.Uri(
+			'https://en.wikipedia.org/wiki/Wikipedia:Bots/Requests_for_approval?useskin=modern#Current_requests_for_approval'
+		);
+		assert.deepEqual(uri, {
+			"arrayParams": false,
+			"fragment": "Current_requests_for_approval",
+			"host": "en.wikipedia.org",
+			"password": undefined,
+			"path": "/wiki/Wikipedia:Bots/Requests_for_approval",
+			"protocol": "https",
+			"port": undefined,
+			"query": {
+				"useskin": "modern"
+			},
+			"user": undefined
+		});
+	});
+
 });

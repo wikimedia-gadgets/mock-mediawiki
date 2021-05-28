@@ -14,6 +14,25 @@ describe('test', function () {
 		expect(mw.util.escapeRegExp("a?:$")).toBe("a\\?:\\$");
 	});
 
+	test('Uri', () => {
+		const uri = new mw.Uri(
+			'https://en.wikipedia.org/wiki/Wikipedia:Bots/Requests_for_approval?useskin=modern#Current_requests_for_approval'
+		);
+		expect(uri).toStrictEqual({
+			"arrayParams": false,
+			"fragment": "Current_requests_for_approval",
+			"protocol": "https",
+			"host": "en.wikipedia.org",
+			"password": undefined,
+			"path": "/wiki/Wikipedia:Bots/Requests_for_approval",
+			"port": undefined,
+			"query": {
+				"useskin": "modern"
+			},
+			"user": undefined
+		});
+	});
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {

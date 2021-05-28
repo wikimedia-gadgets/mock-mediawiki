@@ -1,7 +1,9 @@
 
 Last updated from commit [bdd211fb801ee056a3c89e2291cb26ca2961f701](https://github.com/wikimedia/mediawiki/tree/bdd211fb801ee056a3c89e2291cb26ca2961f701) on [wikimedia/mediawiki](https://github.com/wikimedia/mediawiki).
 
-mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086.
+mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086. mw.Uri uploaded from 4444264dfe31453398aa4876df253394bf26e428.
+
+(TODO: update everything to same commit ID)
 
 | File         | Original file | Patches  | 
 |--------------|---------------|----------|
@@ -16,6 +18,7 @@ mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086.
 | String.js | [resources/src/mediawiki.String.js]  | None |
 | user.js | [resources/src/mediawiki.user.js] | None
 | All 12 mw.Api files | [resources/src/mediawiki.api] | None 
+| Uri/Uri.js | [resources/src/mediawiki.Uri/Uri.js] | None 
 
 Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these are generated on-the-fly based on wiki configurations by the backend PHP, so there's nowhere we can copy the files from.)
 
@@ -30,3 +33,4 @@ Extra files added: `config.json`, `util/config.json` (In real MediaWiki, these a
 [resources/src/mediawiki.String.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.String.js
 [resources/src/mediawiki.user.js]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.user.js
 [resources/src/mediawiki.api]: https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.api
+[resources/src/mediawiki.Uri/Uri.js]: https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.Uri/Uri.js
