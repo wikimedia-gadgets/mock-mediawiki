@@ -50,6 +50,16 @@ describe('test', function () {
 		expect(mw.language.convertPlural(0, ['horse', 'horses'])).toBe('horses');
 	});
 
+	test('loader', async () => {
+		const data = await $.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*');
+		expect(data).toStrictEqual({ batchcomplete: '' });
+		// Loading the gadget also triggers mw.loader.implement()!
+		await mw.loader.getScript('https://test.wikipedia.org/w/load.php?modules=ext.gadget.select2');
+		await sleep(300); // Execution of the loaded script won't be done unless we sleep
+		expect($.fn.select2).toBeTruthy();
+		mw.loader.addStyleTag('body { font-size: 10px; }');
+	}, 10000);
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {
@@ -81,3 +91,11 @@ describe('test', function () {
 	});
 
 });
+
+function sleep(ms) {
+	return new Promise(((resolve, reject) => {
+		setTimeout(function () {
+			resolve();
+		}, ms);
+	}));
+}

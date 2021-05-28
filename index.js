@@ -3,9 +3,17 @@ global.$ = global.jQuery = require("jquery");
 // needed in ./lib/mediawiki
 global.$VARS = {
 	wgLegacyJavaScriptGlobals: false,
+	baseModules: []
+};
+global.$CODE = {
+	profileExecuteStart: function () {},
+	profileScriptStart: function () {},
+	profileScriptEnd: function () {},
+	profileExecuteEnd: function () {}
 };
 require("./lib/startup/mediawiki");
 global.mw = global.mediaWiki = window.mw;
+require("./lib/startup/mediawiki.requestIdleCallback");
 require("./lib/mediawiki.base/mediawiki.base");
 require("./lib/mediawiki.util/util");
 require("./lib/mediawiki.Title/Title");
@@ -35,8 +43,6 @@ require("./lib/mediawiki.language/mediawiki.language.names");
 require("./lib/mediawiki.language/mediawiki.language.numbers");
 require("./lib/mediawiki.language/mediawiki.language.specialCharacters");
 require("./lib/mediawiki.jqueryMsg/mediawiki.jqueryMsg");
-
-require("./stubs/mw.loader");
 
 module.exports = {
 	setPage: function (pageName, pageId, pageIsRedirect, pageRestrictions) {

@@ -52,4 +52,23 @@ describe('test', function () {
 		assert.strictEqual(mw.language.convertPlural(0, ['horse', 'horses']),'horses');
 	});
 
+	it('loader', async function () {
+		this.timeout(10000);
+		const data = await $.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*');
+		assert.deepEqual(data,{ batchcomplete: '' });
+		// Loading the gadget also triggers mw.loader.implement()!
+		await mw.loader.getScript('https://test.wikipedia.org/w/load.php?modules=ext.gadget.morebits');
+		await sleep(300); // Execution of the loaded script won't be done unless we sleep
+		assert.ok(window.Morebits);
+		mw.loader.addStyleTag('body { font-size: 10px; }');
+	});
+
 });
+
+function sleep(ms) {
+	return new Promise(((resolve, reject) => {
+		setTimeout(function () {
+			resolve();
+		}, ms);
+	}));
+}
