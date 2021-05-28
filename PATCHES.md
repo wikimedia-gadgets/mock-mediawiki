@@ -7,10 +7,10 @@ mw.user and mw.Api uploaded from c60ccf4e6d4932dddc2efd72a8abf6e56243f086. mw.Ur
 
 | File         | Original file | Patches  | 
 |--------------|---------------|----------|
-| mediawiki.js |  [resources/src/startup/mediawiki.js] | None |
-| mediawiki.base.js | [resources/src/mediawiki.base/mediawiki.base.js] | Removed the last few lines: `while ( queue[ 0 ] ) { window.RLQ.push( queue.shift() ); }` 
-| legacy.wikibits.js | [resources/src/mediawiki.base/legacy.wikibits.js] | None
-| mediawiki.errorLogger.js | [resources/src/mediawiki.base/mediawiki.errorLogger.js] | None
+| startup/mediawiki.js |  [resources/src/startup/mediawiki.js] | None |
+| mediawiki.base/mediawiki.base.js | [resources/src/mediawiki.base/mediawiki.base.js] | Removed the last few lines: `while ( queue[ 0 ] ) { window.RLQ.push( queue.shift() ); }` 
+| mediawiki.base/legacy.wikibits.js | [resources/src/mediawiki.base/legacy.wikibits.js] | None
+| mediawiki.base/mediawiki.errorLogger.js | [resources/src/mediawiki.base/mediawiki.errorLogger.js] | None
 | mediawiki.util/util.js | [resources/src/mediawiki.util/util.js] | None |
 | mediawiki.util/jquery.accessKeyLabel.js | [resources/src/mediawiki.util/jquery.accessKeyLabel.js] | None |
 | mediawiki.Title/Title.js| [resources/src/mediawiki.Title/Title.js] | Changed import `require( 'mediawiki.String' )` to `require( '../mediawiki.String' )` |
