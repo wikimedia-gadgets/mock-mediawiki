@@ -47,6 +47,7 @@ describe('test', function () {
 
 	test('language', () => {
 		expect(mw.language.convertNumber(345543)).toBe('345,543');
+		expect(mw.language.convertPlural(0, ['horse', 'horses'])).toBe('horses');
 	});
 
 	test('api', async () => {

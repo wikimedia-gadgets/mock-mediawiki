@@ -49,6 +49,7 @@ describe('test', function () {
 
 	it('language', () => {
 		assert.strictEqual(mw.language.convertNumber(345543), '345,543');
+		assert.strictEqual(mw.language.convertPlural(0, ['horse', 'horses']),'horses');
 	});
 
 });
