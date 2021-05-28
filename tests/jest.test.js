@@ -45,6 +45,10 @@ describe('test', function () {
 		expect(output.render()[0]).toBeInstanceOf(HTMLDivElement);
 	});
 
+	test('language', () => {
+		expect(mw.language.convertNumber(345543)).toBe('345,543');
+	});
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {

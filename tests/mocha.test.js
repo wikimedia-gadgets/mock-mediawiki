@@ -47,5 +47,8 @@ describe('test', function () {
 		assert.ok(output.render()[0] instanceof window.HTMLDivElement);
 	});
 
+	it('language', () => {
+		assert.strictEqual(mw.language.convertNumber(345543), '345,543');
+	});
 
 });

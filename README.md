@@ -4,7 +4,7 @@
 
 Honest MediaWiki JS interface mocking in Node.js.
 
-No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.hook, mw.html, mw.Uri, mw.storage, mw.template, and mw.Message. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
+No unnecessary changes to the original source files. Directly copied from MediaWiki core with [bare minimum modifications](https://github.com/wikimedia-gadgets/mock-mediawiki/blob/main/PATCHES.md). Currently includes mw.config, mw.util, mw.Title, mw.Api, mw.user, mw.hook, mw.html, mw.Uri, mw.storage, mw.language, mw.template, and mw.Message. jQuery is also included from [its npm package](https://www.npmjs.com/package/jquery).
 
 To stay true to the original source, `mw` and `$` are made available as globals, rather than exported from the module. 
 
@@ -40,11 +40,18 @@ ESM:
 ```js
 import 'mock-mediawiki/with-jsdom';
 ```
+
+Or even better, consider using [jsdom-global](https://www.npmjs.com/package/jsdom-global) which sets up JSDOM similar to how Jest does it; and then just do `require('mock-mediawiki)` or its ESM equivalent.
+
 It is assumed that ESM tests undergo transformation to CommonJS as part of some build step. Use of this package with native Node.js ESM packages is not supported because of its internal reliance on `require()`.
 
-----
+### Notes
 
 If your tests are in TypeScript, you'll need to additionally have [types-mediawiki](https://github.com/wikimedia-gadgets/types-mediawiki). However, note that types-mediawiki covers type definitions for more modules, so TypeScript-based IntelliSense could be somewhat misleading.
+
+For using mw.storage, you must give JSDOM a URL (for jest this is done via `testURL` in jest.config.js, for jsdom or jsdom-global, provide `url` param to the constructor). 
+
+For mw.language, [convertGrammar specialisations](https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language/languages) for non-English languages aren't included (since whether to load them or not depends on the wgUserLanguage). 
 
 Please file an issue if anything doesn't work.
 

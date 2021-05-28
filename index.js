@@ -24,6 +24,13 @@ require("./lib/api/user");
 require("./lib/api/watch");
 require("./lib/storage");
 require("./lib/template");
+require("./lib/mediawiki.language/mediawiki.language.init");
+require("./lib/mediawiki.language/mediawiki.language");
+require("./lib/mediawiki.language/mediawiki.language.fallback");
+require("./lib/mediawiki.language/mediawiki.language.months");
+require("./lib/mediawiki.language/mediawiki.language.names");
+require("./lib/mediawiki.language/mediawiki.language.numbers");
+require("./lib/mediawiki.language/mediawiki.language.specialCharacters");
 
 require("./stubs/mw.loader");
 
