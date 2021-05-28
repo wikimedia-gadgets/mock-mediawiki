@@ -35,4 +35,11 @@ describe('test', function () {
 		});
 	});
 
+	it('storage', () => {
+		mw.storage.set('test', 'test-value');
+		assert.strictEqual(mw.storage.get('test'), 'test-value');
+		mw.storage.session.set('xx', 'test-xx-value');
+		assert.strictEqual(mw.storage.session.get('xx'), 'test-xx-value');
+	});
+
 });

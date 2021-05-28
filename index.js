@@ -22,6 +22,7 @@ require("./lib/api/rollback");
 require("./lib/api/upload");
 require("./lib/api/user");
 require("./lib/api/watch");
+require("./lib/storage");
 
 require("./stubs/mw.loader");
 

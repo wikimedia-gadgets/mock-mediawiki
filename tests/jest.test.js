@@ -33,6 +33,13 @@ describe('test', function () {
 		});
 	});
 
+	test('storage', () => {
+		mw.storage.set('test', 'test-value');
+		expect(mw.storage.get('test')).toBe('test-value');
+		mw.storage.session.set('xx', 'test-xx-value');
+		expect(mw.storage.session.get('xx')).toBe('test-xx-value')
+	});
+
 	test('api', async () => {
 		let api = new mw.Api({
 			ajax: {
