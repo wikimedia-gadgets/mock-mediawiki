@@ -96,7 +96,7 @@ describe('test', function () {
 
 	it('user', async () => {
 		let rights = await mw.user.getRights();
-		assert.strictEqual(rights.length,0);
+		assert(rights.length > 10);
 	});
 
 });

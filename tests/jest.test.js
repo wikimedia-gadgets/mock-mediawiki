@@ -92,7 +92,7 @@ describe('test', function () {
 
 	test('user', async () => {
 		let rights = await mw.user.getRights();
-		expect(rights.length).toEqual(0);
+		expect(rights.length).toBeGreaterThan(10);
 	});
 
 });
