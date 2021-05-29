@@ -40,7 +40,7 @@ ESM:
 import 'mock-mediawiki/with-jsdom';
 ```
 
-Or even better, consider using [jsdom-global](https://www.npmjs.com/package/jsdom-global) which sets up JSDOM similar to how Jest does it; and then just do `require('mock-mediawiki)` or its ESM equivalent.
+Or even better, consider using [jsdom-global](https://www.npmjs.com/package/jsdom-global) which injects DOM APIs globally (similar to how Jest does it) and also gives you control over the JSDOM configuration options. Then do `require('mock-mediawiki')` or its ESM equivalent.
 
 It is assumed that ESM tests undergo transformation to CommonJS as part of some build step. Use of this package with native Node.js ESM packages is not supported because of its internal reliance on `require()`.
 

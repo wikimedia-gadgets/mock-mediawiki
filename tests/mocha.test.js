@@ -68,6 +68,16 @@ describe('test', function () {
 		assert.strictEqual(mw.cookie.get('key'),'value');
 	});
 
+	it('api', async () => {
+		let api = new mw.Api({
+			ajax: {
+				url: 'https://test.wikipedia.org/w/api.php'
+			}
+		});
+		let apiResult = await api.get({ action: 'query' });
+		assert.deepEqual(apiResult,{ batchcomplete: '' });
+	});
+
 	it('api with login', async () => {
 		if (process.env.WMF_USERNAME && process.env.WMF_PASSWORD) {
 			let api = new mw.Api({

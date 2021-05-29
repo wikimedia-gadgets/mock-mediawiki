@@ -1,6 +1,6 @@
 global.$ = global.jQuery = require("jquery");
 
-// needed in ./lib/mediawiki
+// needed in ./lib/startup/mediawiki
 global.$VARS = {
 	wgLegacyJavaScriptGlobals: false,
 	baseModules: []
@@ -46,23 +46,25 @@ require("./lib/mediawiki.language/mediawiki.language.numbers");
 require("./lib/mediawiki.language/mediawiki.language.specialCharacters");
 require("./lib/mediawiki.jqueryMsg/mediawiki.jqueryMsg");
 
-module.exports = {
-	setPage: function (pageName, pageId, pageIsRedirect, pageRestrictions) {
-		mw.config.set("wgPageName", pageName);
-		if (pageId) {
-			mw.config.set("wgArticleId", pageId);
-		}
-		if (pageIsRedirect !== undefined && pageIsRedirect !== null) {
-			mw.config.set("wgIsRedirect", pageIsRedirect);
-		}
-		if (pageRestrictions) {
-			mw.config.set("wgRestrictionEdit", pageRestrictions);
-		}
-	},
-	setUser: function (userName, userGroups) {
-		mw.config.get("wgUserName", userName);
-		if (userGroups) {
-			mw.config.get("wgUserGroups", userGroups);
-		}
-	},
+exports.$ = $;
+exports.mw = mw;
+
+exports.setPage = function (pageName, pageId, pageIsRedirect, pageRestrictions) {
+	mw.config.set("wgPageName", pageName);
+	if (pageId) {
+		mw.config.set("wgArticleId", pageId);
+	}
+	if (pageIsRedirect !== undefined && pageIsRedirect !== null) {
+		mw.config.set("wgIsRedirect", pageIsRedirect);
+	}
+	if (pageRestrictions) {
+		mw.config.set("wgRestrictionEdit", pageRestrictions);
+	}
+};
+
+exports.setUser = function (userName, userGroups) {
+	mw.config.get("wgUserName", userName);
+	if (userGroups) {
+		mw.config.get("wgUserGroups", userGroups);
+	}
 };

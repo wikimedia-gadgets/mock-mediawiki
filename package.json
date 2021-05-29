@@ -1,6 +1,6 @@
 {
 	"name": "mock-mediawiki",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "MediaWiki JS interface mocking in Node.js",
 	"main": "index.js",
 	"scripts": {
