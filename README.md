@@ -17,14 +17,15 @@ Licensed under the _Lesser_ General Public License. Can be used from any reposit
 
 ### Use with Jest
 
-If you're using Jest's default test environment `jest-environment-jsdom`, just tweak your `jest.config.js` to include:
+If you're using Jest, tweak your `jest.config.js` to include: (jsdom testEnvironment used to be the default till Jest v26)
 ```
+    "testEnvironment": "jsdom",
     "setupFilesAfterEnv": ["mock-mediawiki"] 
 ```
 
 Done! All your Jest tests will now have access to `mw` and `$` as globals. This setup works with both CommonJS module format and ESM.
 
-Jest exposes globally most browser-only globals available via jsdom. So if your gadget code includes references to `HTMLSpanElement` or `XMLDocument` et al, they'll just work!
+Jest exposes globally most DOM APIs available via jsdom. So if your gadget code includes references to `HTMLSpanElement` or `XMLDocument` et al, they'll just work!
 
 ### Use with other test runners
 
