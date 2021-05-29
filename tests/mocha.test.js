@@ -78,7 +78,8 @@ describe('test', function () {
 		assert.deepEqual(apiResult,{ batchcomplete: '' });
 	});
 
-	it('api with login', async () => {
+	it('api with login', async function () {
+		this.timeout(10000);
 		if (process.env.WMF_USERNAME && process.env.WMF_PASSWORD) {
 			let api = new mw.Api({
 				ajax: {
@@ -91,7 +92,7 @@ describe('test', function () {
 		} else {
 			console.error('No environment variables passed for authentication!'); // soft pass
 		}
-	}, 10000);
+	});
 
 	it('user', async () => {
 		let rights = await mw.user.getRights();
