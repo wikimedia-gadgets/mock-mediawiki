@@ -4,7 +4,7 @@
 	"description": "MediaWiki JS interface mocking in Node.js",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest tests/jest.test.js && mocha tests/mocha.test.js && mocha tests/jsdom-global.test.js"
+		"test": "jest tests/jest.test.js && mocha tests/jsdom-global.test.js && mocha tests/mocha.test.js"
 	},
 	"keywords": [
 		"mediawiki",
