@@ -10,5 +10,6 @@ global.window = new jsdom.JSDOM('<!DOCTYPE html>', {
 }).window;
 global.document = window.document;
 global.location = window.location;
+global.navigator = window.navigator;
 
 module.exports = require('./index');

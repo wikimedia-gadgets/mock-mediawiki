@@ -6,6 +6,10 @@ global.$VARS = {
 	baseModules: []
 };
 global.$CODE = {
+	consoleLog: function () {},
+	maybeRedefineFallbacksForTest: function () {},
+	registrations: function () {},
+	defineLoader: function () {},
 	profileExecuteStart: function () {},
 	profileScriptStart: function () {},
 	profileScriptEnd: function () {},
@@ -14,6 +18,9 @@ global.$CODE = {
 require("./lib/startup/mediawiki");
 global.mw = global.mediaWiki = window.mw;
 require("./lib/startup/mediawiki.requestIdleCallback");
+require("./lib/startup/mediawiki.loader");
+require("./lib/startup/startup");
+require("./lib/startup/profiler");
 require("./lib/mediawiki.base/mediawiki.base");
 require("./lib/mediawiki.util/util");
 require("./lib/mediawiki.Title/Title");
@@ -33,7 +40,7 @@ require("./lib/mediawiki.api/watch");
 require("./lib/mediawiki.storage");
 require("./lib/mediawiki.template");
 require("./lib/jquery.cookie/jquery.cookie");
-require("./lib/mediawiki.cookie/mediawiki.cookie");
+require("./lib/mediawiki.cookie/index");
 require("./lib/CLDRPluralRuleParser/CLDRPluralRuleParser");
 mw.libs.pluralRuleParser = window.pluralRuleParser;
 require("./lib/mediawiki.cldr/index");

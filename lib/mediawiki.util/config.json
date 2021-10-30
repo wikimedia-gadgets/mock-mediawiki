@@ -1,5 +1,8 @@
 {
-  "FragmentMode": ["html5"],
-  "LoadScript": "load",
-  "GenerateThumbnailOnParse": false
+  "FragmentMode": [
+    "html5",
+    "legacy"
+  ],
+  "GenerateThumbnailOnParse": false,
+  "LoadScript": "/w/load.php"
 }
