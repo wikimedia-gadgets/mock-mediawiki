@@ -46,6 +46,7 @@ Or even better, consider using [jsdom-global](https://www.npmjs.com/package/jsdo
 
 ```js
 require('jsdom-global')(undefined, { /*... jsdom config parameters ...*/ });
+global.performance = window.performance; // Required for node.js v14 and older, until https://github.com/rstacruz/jsdom-global/issues/59 is resolved
 require('mock-mediawiki');
 ```
 

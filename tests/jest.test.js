@@ -1,5 +1,5 @@
 
-describe('test', function () {
+describe('test with jest', function () {
 
 	test('mw.Title works with correct wgLegalTitleChars mocking', () => {
 		expect(new mw.Title('Template:Foo').getMainText()).toBe('Foo');

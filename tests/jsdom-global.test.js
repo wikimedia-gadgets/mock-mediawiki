@@ -1,9 +1,10 @@
 const assert = require('assert');
 
 require('jsdom-global')(undefined, { url: 'https://test.wikipedia.org', runScripts: 'dangerously' });
+global.performance = window.performance; // See readme
 require('../index');
 
-describe('test with jsdom-global', function () {
+describe('test using jsdom-global and mocha', function () {
 
 	it('mw.Title works with correct wgLegalTitleChars mocking', () => {
 		assert.strictEqual(new mw.Title('Template:Foo').getMainText(), 'Foo');

@@ -2,7 +2,7 @@ const assert = require('assert');
 
 require('../with-jsdom'); // jest's deps include jsdom, so we haven't explicitly put jsdom as a dev-dep!
 
-describe('test', function () {
+describe('test using bundled with-jsdom and mocha', function () {
 
 	it('mw.Title works with correct wgLegalTitleChars mocking', () => {
 		assert.strictEqual(new mw.Title('Template:Foo').getMainText(), 'Foo');
