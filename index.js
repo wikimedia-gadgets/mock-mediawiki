@@ -39,7 +39,6 @@ require("./lib/mediawiki.api/user");
 require("./lib/mediawiki.api/watch");
 require("./lib/mediawiki.storage");
 require("./lib/mediawiki.template");
-require("./lib/jquery.cookie/jquery.cookie");
 require("./lib/mediawiki.cookie/index");
 require("./lib/CLDRPluralRuleParser/CLDRPluralRuleParser");
 mw.libs.pluralRuleParser = window.pluralRuleParser;
