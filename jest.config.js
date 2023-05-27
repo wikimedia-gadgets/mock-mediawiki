@@ -1,5 +1,7 @@
 module.exports = {
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['.'],
-	testURL: 'https://test.wikipedia.org/'
+	testEnvironmentOptions: {
+		url: 'https://test.wikipedia.org/'
+	}
 };

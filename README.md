@@ -18,6 +18,20 @@ Licensed under the _Lesser_ General Public License. Can be used from any reposit
 ### Use with Jest
 
 If you're using Jest, tweak your `jest.config.js` to include: (jsdom testEnvironment used to be the default till Jest v26)
+
+For Jest v29:
+
+Ensure you have the additional package [`jest-environment-jsdom`](https://www.npmjs.com/package/jest-environment-jsdom) installed (Jest no longer bundles this).
+```
+	"testEnvironment": "jsdom", 
+	"setupFilesAfterEnv": ["mock-mediawiki"],
+	"testEnvironmentOptions": {
+		// this is only needed if you plan to use mw.Api or mw.storage
+		"url": "https://test.wikipedia.org/"
+	}
+```
+
+For Jest v27:
 ```
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": ["mock-mediawiki"],
