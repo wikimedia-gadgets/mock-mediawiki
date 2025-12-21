@@ -47,7 +47,7 @@ const FILE_MAPPING = {
 	'mediawiki.language.months/months.js': 'src/mediawiki.language.months/months.js',
 	'mediawiki.language.names/names.js': 'src/mediawiki.language.names/names.js',
 	'mediawiki.language.specialCharacters/specialCharacters.js': 'src/mediawiki.language.specialCharacters/specialCharacters.js',
-	'mediawiki.language.specialCharacters/specialCharacters.json': 'src/mediawiki.language.specialcharacters/specialCharacters.json',
+	'mediawiki.language.specialCharacters/specialcharacters.json': 'src/mediawiki.language.specialcharacters/specialcharacters.json',
 
 	'mediawiki.storage/index.js': 'src/mediawiki.storage/index.js',
 	'mediawiki.storage/SafeStorage.js': 'src/mediawiki.storage/SafeStorage.js',
