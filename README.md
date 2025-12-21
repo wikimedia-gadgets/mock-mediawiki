@@ -73,3 +73,11 @@ It is possible to use `mw.loader` for loading and executing scripts with `runScr
 For `mw.language`, [convertGrammar specialisations](https://github.com/wikimedia/mediawiki/tree/master/resources/src/mediawiki.language/languages) for non-English languages aren't included (since whether to load them or not depends on the wgUserLanguage).
 
 Please file an issue if anything doesn't work.
+
+## Creating a release
+
+Mock-mediawiki maintainers should follow this procedure to create a release:
+
+- make sure CI is passing
+- bump the version number in package.json, generate a new package-lock.json, then commit (this will trigger the "NPM publish" workflow)
+- https://github.com/wikimedia-gadgets/mock-mediawiki/releases -> Draft a new release -> fill out -> Publish release

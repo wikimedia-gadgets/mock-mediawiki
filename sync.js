@@ -1,3 +1,5 @@
+// Script to help patch this repo to use the latest copies of MediaWiki core files. `Git clone` MediaWiki core somewhere, then copy paste its resources directory into this repo, then run this script, then submit a patch.
+
 const path = require("path");
 const fs = require("fs");
 
