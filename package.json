@@ -6,6 +6,10 @@
 	"scripts": {
 		"test": "jest tests/jest.test.js && mocha tests/mocha.test.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wikimedia-gadgets/mock-mediawiki"
+	},
 	"keywords": [
 		"mediawiki",
 		"testing"
