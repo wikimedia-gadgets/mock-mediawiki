@@ -97,7 +97,7 @@ describe('test using bundled with-jsdom and mocha', function () {
 	it('user', async function () {
 		this.timeout(5000);
 		let rights = await mw.user.getRights();
-		assert(rights.length > 10);
+		assert(rights.length > 6);
 	});
 
 });

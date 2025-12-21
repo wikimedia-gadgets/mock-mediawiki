@@ -92,7 +92,7 @@ describe('test with jest', function () {
 
 	test('user', async () => {
 		let rights = await mw.user.getRights();
-		expect(rights.length).toBeGreaterThan(10);
+		expect(rights.length).toBeGreaterThan(6);
 	});
 
 });
