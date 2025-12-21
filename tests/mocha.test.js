@@ -1,3 +1,5 @@
+// Let's run the exact same tests twice: once in this file, and once in the other test file. The idea is we want to make sure mock-mediawiki works for end users in both of the common JS test suites: Jest and Mocha.
+
 const assert = require('assert');
 
 require('../with-jsdom'); // jest's deps include jsdom, so we haven't explicitly put jsdom as a dev-dep!

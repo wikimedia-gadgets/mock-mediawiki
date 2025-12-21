@@ -1,3 +1,4 @@
+// Let's run the exact same tests twice: once in this file, and once in the other test file. The idea is we want to make sure mock-mediawiki works for end users in both of the common JS test suites: Jest and Mocha.
 
 describe('test with jest', function () {
 
