@@ -11,6 +11,6 @@ global.window = new jsdom.JSDOM('<!DOCTYPE html>', {
 global.document = window.document;
 global.location = window.location;
 global.navigator = window.navigator;
-global.performance = window.performance;
+global.requestAnimationFrame = window.requestAnimationFrame;
 
 module.exports = require('./index');

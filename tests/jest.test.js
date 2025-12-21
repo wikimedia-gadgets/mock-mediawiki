@@ -53,7 +53,7 @@ describe('test with jest', function () {
 	test('loader', async () => {
 		const data = await $.getJSON('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*');
 		expect(data).toStrictEqual({ batchcomplete: '' });
-		// Loading the gadget also triggers mw.loader.implement()!
+		// Loading the gadget also triggers mw.loader.impl()!
 		await mw.loader.getScript('https://test.wikipedia.org/w/load.php?modules=ext.gadget.select2');
 		await sleep(300); // Execution of the loaded script won't be done unless we sleep
 		expect($.fn.select2).toBeTruthy();

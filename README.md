@@ -56,13 +56,7 @@ ESM:
 import 'mock-mediawiki/with-jsdom';
 ```
 
-Or even better, consider using [jsdom-global](https://www.npmjs.com/package/jsdom-global) which injects DOM APIs globally (similar to how Jest does it) and also gives you control over the JSDOM configuration options. Then do `require('mock-mediawiki')` or its ESM equivalent. That is,
-
-```js
-require('jsdom-global')(undefined, { /*... jsdom config parameters ...*/ });
-global.performance = window.performance; // Required for node.js v14 and older, until https://github.com/rstacruz/jsdom-global/issues/59 is resolved
-require('mock-mediawiki');
-```
+If you need to customise JSDOM options, inline `with-jsdom.js` into your test harness and change the options as needed. A previous version of this README recommended the use of [jsdom-global](https://www.npmjs.com/package/jsdom-global). It is no longer advised because jsdom-global is unmaintained and appears to result in integration issues.
 
 It is assumed that ESM tests undergo transformation to CommonJS as part of some build step. Use of this package with native Node.js ESM packages is not supported because of its internal reliance on `require()`.
 
