@@ -64,11 +64,7 @@
 		"710": "TimedText",
 		"711": "TimedText talk",
 		"828": "Module",
-		"829": "Module talk",
-		"2300": "Gadget",
-		"2301": "Gadget talk",
-		"2302": "Gadget definition",
-		"2303": "Gadget definition talk"
+		"829": "Module talk"
 	},
 	"wgNamespaceIds": {
 		"media": -2,
@@ -101,10 +97,6 @@
 		"timedtext_talk": 711,
 		"module": 828,
 		"module_talk": 829,
-		"gadget": 2300,
-		"gadget_talk": 2301,
-		"gadget_definition": 2302,
-		"gadget_definition_talk": 2303,
 		"wp": 4,
 		"wt": 5,
 		"image": 6,
